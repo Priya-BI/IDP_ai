@@ -16,18 +16,24 @@ Function Used:
 ```
 
 - ai_extract : Extract entities specified by labels from text using a state-of-the-art generative AI model.
-``` select 
-       ai_extract(table_html, array('CPT Code')).`CPT Code` as CPT_Code,
-       ai_extract(table_html, array('ICD Code')).`ICD Code` as ICD_Code,
-       ai_extract(table_html, array('Description')).`Description` as Description,
-       ai_extract(table_html, array('Billed Amount')).`Billed Amount` as Billed_Amount,
-       ai_extract(table_html, array('Paid Amount')).`Paid Amount` as Paid_Amount
-from structured_tables
+```
+    select label, 
+    ai_extract(table_html, array('CPT Code')).`CPT Code` as CPT_Code,
+    ai_extract(table_html, array('ICD Code')).`ICD Code` as ICD_Code,
+    ai_extract(table_html, array('Description')).`Description` as Description,
+    ai_extract(table_html, array('Billed Amount')).`Billed Amount` as Billed_Amount,
+    ai_extract(table_html, array('Paid Amount')).`Paid Amount` as Paid_Amount
+    from structured_tables
 ```
   
 - ai_classify : Classify input text according to labels you provide using a state-of-the-art generative AI model.
-  
-  
+ ``` %sql
+create or replace temp view parsed_classified_doc as
+select *,
+ai_classify(cast(parsed_content  as String), array('Invoice','Admin','Receipt','Purchase order')) as label
+from parsed_structured_doc
+
+ ``` 
 
 Bills/invoice come in many formats and layouts — from different vendors, partners, and internal systems — making traditional rule-based parsing brittle and costly to maintain.
 
@@ -46,8 +52,11 @@ Bills/invoice come in many formats and layouts — from different vendors, partn
 ### Steps to start
 - Upload your PDFs to a Databricks Volume.
 <img width="2012" height="800" alt="image" src="https://github.com/user-attachments/assets/09660586-cbe2-4c0f-b17f-8374f9766198" />
+
 - Update the base_path variable in the notebook to point to your documents.
 - Run the .ipynb notebook cells sequentially.
 - View the extracted structured data in the output tables.
-  <img width="2331" height="638" alt="image" src="https://github.com/user-attachments/assets/9cfac09e-30b5-48d5-ae63-1b7e7657badc" />
+ <img width="2615" height="572" alt="image" src="https://github.com/user-attachments/assets/5c9d08a8-74b2-4726-b2d7-e81915438154" />
+
+
 
