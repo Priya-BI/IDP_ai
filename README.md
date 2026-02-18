@@ -3,7 +3,10 @@
 
  Its an automated extraction and structuring of information from documents using AI. 
 
-[Difference between traditional and IDP] (image.png)
+[Difference between traditional and IDP]
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/330d63b1-76f3-4ad0-aa5c-b7ef616e6e0f" />
+
 
 Function Used:
 - ai_parse_document : Extract structured content from unstructured documents using a state-of-the-art generative AI model.
