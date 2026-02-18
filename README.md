@@ -3,12 +3,14 @@
 
  Its an automated extraction and structuring of information from documents using AI. 
 
-[Difference between traditional and IDP]
+### Difference between traditional and IDP
+|Traditional                             | Idp|
+| -------------------------------------- | -------------------------------------------  |
+| No complex OCR orchestration           | 	Understands layout and context of documents |
+|No fragile regex parsing,high Maintence | 	Adapts to documents filetype                |
+|Breaks with format changes              | 	Mininmum manual rules                       |
 
-<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/330d63b1-76f3-4ad0-aa5c-b7ef616e6e0f" />
-
-
-Function Used:
+### Function Used:
 - ai_parse_document : Extract structured content from unstructured documents using a state-of-the-art generative AI model.
 
 ```
@@ -54,12 +56,14 @@ Bills/invoice come in many formats and layouts — from different vendors, partn
 
 ### Steps to start
 - Upload your PDFs to a Databricks Volume.
-<img width="2012" height="800" alt="image" src="https://github.com/user-attachments/assets/09660586-cbe2-4c0f-b17f-8374f9766198" />
+### Sample Pdf:
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/09660586-cbe2-4c0f-b17f-8374f9766198" />
 
 - Update the base_path variable in the notebook to point to your documents.
 - Run the .ipynb notebook cells sequentially.
 - View the extracted structured data in the output tables.
- <img width="2615" height="572" alt="image" src="https://github.com/user-attachments/assets/5c9d08a8-74b2-4726-b2d7-e81915438154" />
+ ### Output:
+ <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/5c9d08a8-74b2-4726-b2d7-e81915438154" />
 
 
 
