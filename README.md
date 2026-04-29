@@ -63,7 +63,7 @@ Bills/invoice come in many formats and layouts — from different vendors, partn
 - Run the .ipynb notebook cells sequentially.
 - View the extracted structured data in the output tables.
  ### Output:
- <img width=600" height="800" alt="image" src="https://github.com/user-attachments/assets/5c9d08a8-74b2-4726-b2d7-e81915438154" />
+ <img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/5c9d08a8-74b2-4726-b2d7-e81915438154" />
 
 
 
